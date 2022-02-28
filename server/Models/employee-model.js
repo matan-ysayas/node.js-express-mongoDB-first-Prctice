@@ -4,7 +4,7 @@ const schema = mongoose.Schema;
 const Employee = new schema(
   {
     firstName: String,
-    lastName: { String, required },
+    lastName:{type:String,required:true},
     email: String,
     age: Number,
   },

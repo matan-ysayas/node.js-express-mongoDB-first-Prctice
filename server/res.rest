@@ -1,1 +1,13 @@
-GET http://localhost:9000
+GET http://localhost:9000/office
+
+###
+
+POST http://localhost:9000/office
+
+Content-Type: application/json
+{
+    "firstName": "matan",
+    "lastName":"ysayas",
+    "email": "dfdfdf@gamil.com",
+    "age":25,
+}

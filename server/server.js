@@ -6,7 +6,7 @@ const cors=require('cors');
 const officeRouter=require('./Routes/office-routes')
 app.use(cors());
 app.use(express.json());
-const port=process.env.PORT || 9000;
+const port=process.env.PORT;
  app.use('/office',officeRouter);
 
 
