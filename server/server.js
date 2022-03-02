@@ -14,8 +14,8 @@ require("./config/passport")(passport);
 
 
 app.use(passport.initialize());
-app.use('/auth', officeRouter );
-app.use("/user",passport.authenticate('jwt',{session:false}),userRouter);
+app.use('/office',passport.authenticate('jwt',{session:false}), officeRouter );
+app.use("/auth",userRouter);
 
 app.get("/", (req, res) => {
   res.send({ msg: "server online" });
