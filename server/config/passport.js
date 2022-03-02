@@ -9,15 +9,15 @@ const options={
 
 options.jwtFromRequest=ExtractJwt.fromAuthHeaderAsBearerToken();
 
-const passportFunction=(passport)=>{
+module.exports=(passport)=>{
     passport.use(
         new jwtStrategy (options,(obj_from_payload, done)=>{
-            users.findOne({_id:obj_from_payload._id})
+            users.findById(obj_from_payload.user._id)
             .then(user=>{
                 if(user) done(null,user);
                 done(null,false)
             })
-            .catch(err=>done(err,false))
+            .catch(err=>console.log(err))
         })
     )
 }
