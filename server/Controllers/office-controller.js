@@ -1,4 +1,4 @@
-const res = require("express/lib/response");
+ 
 const employees = require("../Models/employee-model");
 const getAll = async (req, res) => {
   await employees

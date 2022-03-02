@@ -4,10 +4,12 @@ const express=require('express');
 const app=express();
 const cors=require('cors');
 const officeRouter=require('./Routes/office-routes')
+ app.use('/office',officeRouter);
 app.use(cors());
 app.use(express.json());
 const port=process.env.PORT;
- app.use('/office',officeRouter);
+const userRouter=require('./Routes/user-Routs')
+ app.use('/user',userRouter)
 
 
 
