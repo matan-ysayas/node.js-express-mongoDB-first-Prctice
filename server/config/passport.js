@@ -14,10 +14,10 @@ module.exports=(passport)=>{
         new jwtStrategy (options,(obj_from_payload, done)=>{
             users.findById(obj_from_payload.user._id)
             .then(user=>{
-                if(user) done(null,user);
+                if(user) return done(null,user);
                 done(null,false)
             })
             .catch(err=>console.log(err))
         })
-    )
+    ) 
 }
